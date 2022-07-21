@@ -33,7 +33,7 @@ st.set_page_config(
      page_icon="🤟",
      initial_sidebar_state="expanded",
      menu_items={
-         'Training Model': 'https://colab.research.google.com/drive/1ZfCMJ55adGJqu2tbIxfFIUHsl0rEdaWn?usp=sharing',
+         'Get Help': 'https://colab.research.google.com/drive/1ZfCMJ55adGJqu2tbIxfFIUHsl0rEdaWn?usp=sharing',
          'Report a bug': "https://github.com/IBronko/fruit-image-classifier/issues",
          'About': "# This is a personal project."
      }
