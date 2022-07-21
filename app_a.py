@@ -34,8 +34,8 @@ st.set_page_config(
      initial_sidebar_state="expanded",
      menu_items={
          'Get Help': 'https://colab.research.google.com/drive/1ZfCMJ55adGJqu2tbIxfFIUHsl0rEdaWn?usp=sharing',
-         'Report a bug': "https://github.com/IBronko/fruit-image-classifier/issues",
-         'About': "# This is a personal project."
+         'Report a bug': "https://github.com/ericmc12/streamlit_tester/issues",
+         'About': "# This is a capstone project."
      }
  )
 
