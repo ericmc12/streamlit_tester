@@ -5,10 +5,11 @@ import json
 from streamlit_lottie import st_lottie
 
 import pathlib
+plt = platform.system()
+if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPat
 from pathlib import Path
 
-plt = platform.system()
-if plt == 'Windows': pathlib.WindowsPath = pathlib.PosixPat
+
 
 
 #####################################
