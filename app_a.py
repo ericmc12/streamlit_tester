@@ -5,8 +5,8 @@ import json
 from streamlit_lottie import st_lottie
 
 import pathlib
-plt = platform.system()
-if plt == 'Windows': pathlib.WindowsPath = pathlib.PosixPat
+#plt = platform.system()
+#if plt == 'Windows': pathlib.WindowsPath = pathlib.PosixPat
 from pathlib import Path
 
 
@@ -73,8 +73,8 @@ fruit_dict = {
 # Load model 
 #####################################
 
-temp = pathlib.PosixPath
-pathlib.PosixPath = pathlib.WindowsPath
+#temp = pathlib.PosixPath
+#pathlib.PosixPath = pathlib.WindowsPath
 
 def load_model():
     return load_learner("new2.pkl")
