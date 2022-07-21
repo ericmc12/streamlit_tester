@@ -1,4 +1,5 @@
-fastai
+fastai==2.6.3
 streamlit
 streamlit-lottie
 pathlib
+fastbook
