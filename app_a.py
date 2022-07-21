@@ -18,12 +18,12 @@ from pathlib import Path
 
 st.set_page_config(
      page_title="Sign Language Classifier",
-     page_icon="🍌",
+     page_icon="🤟",
      initial_sidebar_state="expanded",
      menu_items={
          'Get Help': 'https://github.com/IBronko/',
          'Report a bug': "https://github.com/IBronko/fruit-image-classifier/issues",
-         'About': "# This is a personal project."
+         'About': "# This is a capstone project."
      }
  )
 
@@ -49,25 +49,7 @@ with col2:
         key=None,
         )
     
-#####################################
-# Modify model answers
-#####################################
 
-fruit_dict = {
-    'custard apple':"This looks like a Custard Apple to me.", 
-    'dragon fruit':"This looks like a Dragon fuit to me.", 
-    'durian':"This looks like a Durian to me.", 
-    'jackfruit':"This looks like a Jack Fruit to me.", 
-    'mangosteen':"This looks like a Mangosteen to me.", 
-    'nam dok mai mango':"This looks like a Nam Dok Mai Mango to me.", 
-    'pomelo':"This looks like a Pomelo to me.", 
-    'rambutan':"This looks like a Rambutan to me.", 
-    'rose apple':"This looks like a Rose Apple to me.", 
-    'salak fruit':"This looks like a Salak Fruit to me.", 
-    'sapodilla':"This looks like a Sapodilla to me.", 
-    'tamarind':"This looks like a Tamarind to me.", 
-    'thai bananas':"This looks like a Thai Banana to me."
-    }
 
 #####################################
 # Load model 
@@ -79,11 +61,11 @@ fruit_dict = {
 def load_model():
     return load_learner("new2.pkl")
 
-with st.spinner("I am collecting my thoughts..."):
+with st.spinner("Loading...."):
     model = load_model()
     
 #####################################
-# Upload image and make inference 
+# Upload image and Classify 
 #####################################
 
 uploaded_image = st.file_uploader("Upload your image and I'll give it a try.", type=["png", "jpg"])
@@ -102,13 +84,13 @@ if uploaded_image is not None:
 with st.expander("Info"):
      st.markdown("""
          - I have been trained by fine-tuning a __ResNet18__ convolutional neural network
-         - For each fruit type, I have been provided around 100 images to learn from
-         - After 4 training runs (epochs), this was the result on the validation set:    
+         - For each letter, I have been provided around 500 images to learn from
+         - After 3 training runs (epochs), this was the result on the validation set:    
      """)
-     st.image("images/confusion_matrix.png")
+     st.image("images/confusionmatrix.png")
      st.markdown("""
-         Want to know more?
-         [Check out this Blog Series](https://ibronko.hashnode.dev/series/fast-ai)   
+         Want to view the code?
+         [Google Colab](https://colab.research.google.com/drive/1ZfCMJ55adGJqu2tbIxfFIUHsl0rEdaWn?usp=sharing)   
      """)
      
 if st.button("Press button to load example image"):
@@ -116,4 +98,4 @@ if st.button("Press button to load example image"):
     st.image(example_image)
     pred,pred_idx,probs = model.predict(example_image)
    
-    st.success(f"{fruit_dict[pred]} I am {probs[pred_idx]*100:.0f}% confident.")
+    st.success(f"The letter: {pred} ; Probability: {probs[pred_idx]:.04f}")
