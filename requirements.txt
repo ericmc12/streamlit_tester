@@ -1,5 +1,4 @@
 fastai
-torch
 streamlit
 streamlit-lottie
 pathlib
